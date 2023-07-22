@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import React from 'react'
 import { getPostData, getPostList } from '../../lib/posts'
-import { DateFormatter } from '../../lib/DateFormatter';
+import Post from '../../components/Post'
 
 export async function getStaticProps({ params }) {
   const postData = await getPostData(params.id)
@@ -21,19 +20,13 @@ export async function getStaticPaths() {
   }
 }
 
-export default function Post({ postData }) {
-
+export default function PostIndex({ postData }) {
   return (
     <>
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <h1 className='italic'>{postData.title}</h1>
-      <h3>{DateFormatter.toTextDate(postData.date)}</h3>
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      <h2>
-        <Link href="/posts">Back to posts</Link>
-      </h2>
+      <Post id={postData.id} title={postData.title} date={postData.date} contentHtml={postData.contentHtml} />
     </>
   )
 }
