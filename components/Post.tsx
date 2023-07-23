@@ -12,11 +12,10 @@ export default function Post({ id, title, date, contentHtml }) {
       <PostHeader id={id + date} />
       <div className='p-4 pt-12 max-w-[600px] mx-auto'>
         <h1 className='text-3xl mb-2'>{title}</h1>
-        <h3 className='text-gray-500 mb-4'>{DateFormatter.toTextDate(date)}</h3>
+        <h3 className='text-gray-500 mb-8'>{DateFormatter.toTextDate(date)}</h3>
         <div className="mx-auto" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
-        <Footer href="/posts" title="Go to Posts" />
-
+        <Footer href="/" title="Go to Posts" />
       </div>
     </>
   )
