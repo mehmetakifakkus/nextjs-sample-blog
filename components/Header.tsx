@@ -12,7 +12,7 @@ export default function Header() {
         className='rounded-full w-[120px]'
       />
 
-      <p className='mt-4 w-[420px] text-center text-gray-600'>I am software developer from Ankara specialized on Frontend Development with React, Next.js and Tailwind.</p>
+      <p className='mt-4 w-[440px] text-center text-sm text-gray-500'>I am software developer from Ankara, Turkey specialized on Frontend Development with Typescript, React, Next.js and Tailwind.</p>
     </div>
   )
 }

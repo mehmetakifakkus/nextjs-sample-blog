@@ -20,7 +20,7 @@ export async function getStaticPaths() {
   }
 }
 
-export default function PostIndex({ postData }) {
+export default function PostWithId({ postData }) {
   return (
     <>
       <Head>
